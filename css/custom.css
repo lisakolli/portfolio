@@ -1,0 +1,92 @@
+/* ============================================================
+   custom.css – deine eigenen Anpassungen.
+   theme.min.css NIE anfassen. Alles was du ändern willst,
+   kommt hier rein (wird nach dem Theme geladen und gewinnt).
+   ============================================================ */
+
+/* --- 1. Farben an einer Stelle ------------------------------
+   Willst du z.B. grüne Akzente statt schwarz? Nur hier ändern. */
+:root {
+  --akzent: #151515;        /* Hauptfarbe, Buttons, Links */
+  --akzent-hell: #6c757d;   /* Hover, Nebentext */
+  --linie: #e9ecef;         /* Rahmen und Trennlinien */
+}
+
+/* --- 2. Schrift --------------------------------------------- */
+@font-face {
+  font-family: 'Inter'; font-style: normal; font-weight: 300; font-display: swap;
+  src: url('../fonts/inter-v12-latin-300.woff2') format('woff2'),
+       url('../fonts/inter-v12-latin-300.woff') format('woff');
+}
+@font-face {
+  font-family: 'Inter'; font-style: normal; font-weight: 500; font-display: swap;
+  src: url('../fonts/inter-v12-latin-500.woff2') format('woff2'),
+       url('../fonts/inter-v12-latin-500.woff') format('woff');
+}
+@font-face {
+  font-family: 'Inter'; font-style: normal; font-weight: 700; font-display: swap;
+  src: url('../fonts/inter-v12-latin-700.woff2') format('woff2'),
+       url('../fonts/inter-v12-latin-700.woff') format('woff');
+}
+
+/* --- 3. Projektkacheln --------------------------------------
+   .projekt-bild sorgt dafür, dass alle Bilder gleich hoch sind,
+   egal welches Seitenverhältnis dein Foto hat. */
+.projekt-bild {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  width: 100%;
+  background: #f1f3f5;
+}
+
+.projekt-karte {
+  border: 1px solid var(--linie);
+  border-radius: .5rem;
+  overflow: hidden;
+  height: 100%;
+  background: #fff;
+  transition: border-color .15s ease;
+}
+.projekt-karte:hover { border-color: #adb5bd; }
+
+/* Der ganze Kachel-Bereich ist klickbar (dank .stretched-link im HTML),
+   trotzdem soll der Titel nicht blau unterstrichen werden. */
+.projekt-karte a { text-decoration: none; color: inherit; }
+
+/* --- 4. Tags (z.B. "STM32", "KiCad", "4-Layer") -------------- */
+.tag {
+  display: inline-block;
+  font-size: .75rem;
+  line-height: 1;
+  padding: .35rem .5rem;
+  border: 1px solid var(--linie);
+  border-radius: .25rem;
+  color: var(--akzent-hell);
+  margin: 0 .25rem .25rem 0;
+  white-space: nowrap;
+}
+
+/* --- 5. Eckdaten-Tabelle auf der Projektseite ---------------- */
+.eckdaten th {
+  width: 40%;
+  font-weight: 500;
+  color: var(--akzent-hell);
+  white-space: nowrap;
+}
+.eckdaten td, .eckdaten th {
+  padding: .5rem 0;
+  border-bottom: 1px solid var(--linie);
+  vertical-align: top;
+}
+
+/* Monospace für Messwerte, Pinbelegungen, Bauteilnummern */
+.wert { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+
+/* --- 6. Abstand unter der fixen Navbar ----------------------- */
+main { padding-top: 5rem; }
+
+/* --- 7. Barrierefreiheit: Fokus sichtbar lassen -------------- */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--akzent);
+  outline-offset: 2px;
+}

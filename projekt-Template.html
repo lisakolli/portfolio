@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>4S LiFePO4 BMS – Max Mustermann</title>
+  <meta name="description" content="Battery Management System with STM32G0, passive balancing, and CAN connectivity.">
+
+  <link rel="stylesheet" href="css/theme.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white border-bottom">
+  <div class="container">
+    <a class="navbar-brand fw-bolder" href="index.html">Max Mustermann</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#menu" aria-controls="menu" aria-expanded="false"
+            aria-label="Open menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html#projekte">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#ueber">About me</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#kontakt">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ============================================================
+       PROJECT HEADER
+       ============================================================ -->
+  <article class="container py-5">
+
+    <a href="index.html#projekte" class="link-secondary small">← All Projects</a>
+
+    <div class="row mt-3">
+      <div class="col-lg-8">
+        <h1 class="display-6 fw-bold mb-3">4S LiFePO4 BMS</h1>
+        <p class="fs-5 text-muted" style="max-width: 62ch;">
+          A single sentence summarizing the project without requiring scrolling.
+          For example: Cell monitoring and safety cutoff for a 12 V battery pack
+          in a camper van, rated for 60 A continuous current.
+        </p>
+        <div class="mb-4">
+          <span class="tag">STM32G0</span>
+          <span class="tag">KiCad</span>
+          <span class="tag">CAN</span>
+          <span class="tag">2023</span>
+          <span class="tag">functional</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main hero image. Preferably the best photo of the assembled PCB. -->
+    <img src="img/projekte/platzhalter.svg"
+         class="img-fluid rounded mb-5 w-100"
+         alt="Assembled BMS PCB, top view showing shunt resistor and terminals">
+
+    <div class="row">
+
+      <!-- ---------- Left Column: Detailed Description ---------- -->
+      <div class="col-lg-8 pe-lg-5">
+
+        <h2 class="h4 mt-0 mb-3">Motivation</h2>
+        <p class="text-muted">
+          What was the core problem? Why build an in-house solution instead of buying off-the-shelf?
+          Two to four concise sentences are sufficient.
+        </p>
+
+        <h2 class="h4 mt-5 mb-3">Circuit Design</h2>
+        <p class="text-muted">
+          Focus on key architecture decisions rather than enumerating every schematic line.
+          Example: Why a shunt resistor was chosen over a Hall-effect sensor, gate driver
+          topology design, and the isolation interface between power and logic stages.
+        </p>
+
+        <h2 class="h4 mt-5 mb-3">PCB Layout</h2>
+        <p class="text-muted">
+          Layer stackup, copper weight, critical trace widths, and thermal management.
+          If revision A had a design flaw, document what was updated in revision B here.
+        </p>
+
+        <h2 class="h4 mt-5 mb-3">Firmware</h2>
+        <p class="text-muted">
+          High-level architecture, RTOS vs. bare-metal implementation, cell voltage sampling
+          and filtering algorithms, and short-circuit protection execution.
+        </p>
+
+        <h2 class="h4 mt-5 mb-3">Test Results</h2>
+        <p class="text-muted">
+          Engineering metrics and empirical data:
+        </p>
+        <ul class="text-muted">
+          <li>Cell voltage measurement error: <span class="wert">±3 mV</span> across 2.5–3.8 V</li>
+          <li>Quiescent current: <span class="wert">42 µA</span> in sleep mode</li>
+          <li>Short-circuit response time: <span class="wert">180 µs</span></li>
+          <li>MOSFET temperature at 60 A: <span class="wert">64 °C</span> after 20 min</li>
+        </ul>
+
+        <h2 class="h4 mt-5 mb-3">Lessons Learned &amp; Next Steps</h2>
+        <p class="text-muted">
+          An honest reflection on design tradeoffs and open improvement areas. Demonstrates
+          thorough technical evaluation better than claiming first-pass perfection.
+        </p>
+
+        <!-- Image Gallery: 3 side-by-side images on desktop, stacked on mobile -->
+        <h2 class="h4 mt-5 mb-3">Gallery</h2>
+        <div class="row g-3">
+          <div class="col-6 col-md-4">
+            <img src="img\projekte/EMR-Mapping.png" class="img-fluid rounded"
+                 alt="Bare printed circuit board">
+          </div>
+          <div class="col-6 col-md-4">
+            <img src="img\projekte/EMR-Mapping.png" class="img-fluid rounded"
+                 alt="Oscilloscope capture of short-circuit cutoff delay">
+          </div>
+          <div class="col-6 col-md-4">
+            <img src="img\projekte/EMR-Mapping.png" class="img-fluid rounded"
+                 alt="BMS installed inside enclosure">
+          </div>
+        </div>
+      </div>
+
+      <!-- ---------- Right Column: Key Specifications & Downloads ---------- -->
+      <aside class="col-lg-4 mt-5 mt-lg-0">
+        <div class="p-4 bg-gray-100 rounded">
+
+          <h2 class="h6 mb-3">Specifications</h2>
+          <table class="table eckdaten mb-4">
+            <tbody>
+              <tr><th>Controller</th><td class="wert">STM32G071</td></tr>
+              <tr><th>Supply Voltage</th><td class="wert">9–16 V</td></tr>
+              <tr><th>Continuous Current</th><td class="wert">60 A</td></tr>
+              <tr><th>PCB Specs</th><td class="wert">4-layer, 2 oz, 80 × 50 mm</td></tr>
+              <tr><th>Interface</th><td class="wert">CAN 2.0B</td></tr>
+              <tr><th>Status</th><td>Rev. B, verified</td></tr>
+            </tbody>
+          </table>
+
+          <h2 class="h6 mb-3">Downloads</h2>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-2"><a href="Files/bms-schaltplan.pdf" class="link-fancy">Schematics (PDF)</a></li>
+            <li class="mb-2"><a href="Files/bms-gerber.zip" class="link-fancy">Gerber Files (ZIP)</a></li>
+            <li class="mb-2"><a href="Files/bms-bom.csv" class="link-fancy">Bill of Materials (CSV)</a></li>
+            <li><a href="https://github.com/dein-name/bms" class="link-fancy">Firmware on GitHub</a></li>
+          </ul>
+
+        </div>
+      </aside>
+
+    </div>
+  </article>
+
+  <!-- Navigation back to overview -->
+  <div class="container py-4 border-top">
+    <a href="index.html#projekte" class="link-fancy">← Back to Overview</a>
+  </div>
+
+</main>
+
+<footer class="container py-4 border-top">
+  <p class="text-muted small mb-0">
+    © 2026 Max Mustermann ·
+    <a href="impressum.html" class="link-secondary">Legal Notice</a>
+  </p>
+</footer>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

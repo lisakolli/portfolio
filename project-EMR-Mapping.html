@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EMR Mapping – HTL Diploma Thesis</title>
+  <meta name="description" content="Mobile measurement device for capturing and GPS-mapped tracking of environmental EMR, paired with a scientific literature review.">
+  <link rel="stylesheet" href="css/theme.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white border-bottom">
+  <div class="container">
+    <a class="navbar-brand fw-bolder" href="index.html">Letissa Adlboller · Robin Heindl · Lisa Kolli</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#menu" aria-controls="menu" aria-expanded="false"
+            aria-label="Open menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html#projekte">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#ueber">About me</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#kontakt">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <article class="container py-5 mt-5">
+
+    <a href="index.html#projekte" class="link-secondary small">← All Projects</a>
+
+    <div class="row mt-3">
+      <div class="col-lg-8">
+        <h1 class="display-6 fw-bold mb-3">EMR-Mapping</h1>
+        <p class="fs-5 text-muted" style="max-width: 62ch;">
+          Development of a mobile measurement device for capturing and GPS-mapped tracking of environmental EMR, paired with a scientific literature review on potential health impacts.
+        </p>
+        <div class="mb-4">
+          <span class="tag">Altium</span>
+          <span class="tag">ESP32</span>
+          <span class="tag">Python</span>
+          <span class="tag">3D Printing</span>
+          <span class="tag">2025</span>
+        </div>
+      </div>
+    </div>
+
+    <img src="img/projekte/EMR-Mapping.png"
+         class="img-fluid rounded mb-5 w-100"
+         alt="Finished EMR Mapping Device with Log-Periodic Antenna">
+
+    <div class="row">
+
+      <div class="col-lg-8 pe-lg-5">
+
+        <h2 class="h4 mt-0 mb-3">Motivation &amp; Concept</h2>
+        <p class="text-muted">
+          Electromagnetic radiation (EMR) is omnipresent and continues to rise with technological advancements. 
+          To provide empirical data and address public health concerns, this project integrates a portable hardware measurement unit with dynamic GPS mapping and an extensive literature study evaluating RF-EMF health research.
+        </p>
+
+        <h2 class="h4 mt-5 mb-3">Hardware Architecture</h2>
+        <p class="text-muted">
+          The hardware system captures RF signals using a wideband log-periodic antenna covering 800 MHz to 6 GHz. 
+          The incoming signal is processed through a two-stage analog conditioning block featuring a non-inverting operational amplifier circuit (LM358) to bring voltages into the target range of 0 V to 3.3 V. 
+          An intrinsic curve/envelope detector smooths the signal alongside a low-pass filter (R<sub>T</sub> = 120 m&Omega;, C<sub>T</sub> = 220 pF). A 10 M&Omega; pull-down resistor was implemented to stabilize high-impedance antenna interactions.
+        </p>
+
+        <h2 class="h4 mt-5 mb-3">Enclosure Design</h2>
+        <p class="text-muted">
+          The housing combines aluminum shielding, to prevent internal hardware noise from interfering with measurement sensitivity and 13 modular 3D-printed PLA components. 
+          Key structural elements include reinforced external mounts for both the main log-periodic antenna and the GPS module, an integrated status display, control buttons, and LED diffusers.
+        </p>
+
+        <h2 class="h4 mt-5 mb-3">Firmware &amp; Software Infrastructure</h2>
+        <p class="text-muted">
+          The ESP32 firmware (C/C++) manages real-time sampling, GPS coordinate extraction via TinyGPS++, and user interface outputs driven by <code>LiquidCrystal_I2C</code>. 
+          Data logging writes synchronized location and EMR telemetry to an SD card using <code>SdFat</code>.
+        </p>
+        <p class="text-muted">
+          A secondary Python pipeline processes recorded datasets. Using Pandas for data cleaning and Folium for geospatial rendering, it generates interactive heatmaps alongside Matplotlib statistical evaluations (mean, max, boxplots), compiling everything into an offline-ready HTML report.
+        </p>
+
+        <h2 class="h4 mt-5 mb-3">Measured Performance Metrics</h2>
+        <p class="text-muted">Key system parameters and empirical measurements derived during hardware verification:</p>
+        <ul class="text-muted">
+          <li>Frequency Coverage: <span class="wert">800 MHz – 6 GHz</span></li>
+          <li>Analog Input Range: <span class="wert">0 mV – 120 mV</span></li>
+          <li>Op-Amp Output Scale: <span class="wert">0 V – 3.3 V</span></li>
+          <li>Sampling Rate: <span class="wert">1 Hz</span></li>
+          <li>Battery Operation: <span class="wert">around 3 hours</span> (5V Powerbank driven)</li>
+        </ul>
+
+        <h2 class="h4 mt-5 mb-3">Lessons Learned &amp; Engineering Solutions</h2>
+        <p class="text-muted">
+          Through this project, key practical experience was gained in properly selecting and dimensioning electronic components. Furthermore, the scientific research revealed that the measured high-frequency electromagnetic radiation in everyday environments remains well below regulatory safety thresholds, making its health impact unproblematic.
+        </p>
+        <p class="text-muted">
+          On the technical side, high-impedance antenna interactions initially caused signal instability, which was successfully resolved by implementing a dedicated 10 MΩ pull-down resistor. However, the hardware setup presented an unavoidable limitation: due to the limited gain-bandwidth product of the LM358 operational amplifier, higher frequencies naturally experienced severe signal attenuation, an inherent characteristic of the chosen OPV that remained present in the final hardware.
+        </p>
+
+        <h2 class="h4 mt-5 mb-3">Gallery</h2>
+        <div class="row">
+          <div class="col-6 col-md-4" style="margin-bottom: 1.5rem;">
+            <img src="img/projekte/EMR-Mapping_case.png" class="img-fluid rounded w-100" alt="Case with all parts">
+          </div>
+          <div class="col-6 col-md-4" style="margin-bottom: 1.5rem;">
+            <img src="img/projekte/EMR-Mapping_Antenna.png" class="img-fluid rounded w-100" alt="Antenna">
+          </div>
+          <div class="col-6 col-md-4" style="margin-bottom: 1.5rem;">
+            <img src="img/projekte/EMR-Mapping_ESP_circiut.png" class="img-fluid rounded w-100" alt="ESP32 Circuit Board">
+          </div>
+          <div class="col-6 col-md-4" style="margin-bottom: 1.5rem;">
+            <img src="img/projekte/EMR-Mapping_Filter-Circiut.png" class="img-fluid rounded w-100" alt="Filter Circuit Board">
+          </div>
+          <div class="col-6 col-md-4" style="margin-bottom: 1.5rem;">
+            <img src="img/projekte/EMR-Mapping_Heatmap.png" class="img-fluid rounded w-100" alt="Geospatial EMR Heatmap">
+          </div>
+          <div class="col-6 col-md-4" style="margin-bottom: 1.5rem;">
+            <img src="img/projekte/EMR-Mapping_Statistics.png" class="img-fluid rounded w-100" alt="Statistical Data Evaluation">
+          </div>
+        </div>
+
+      <aside class="col-lg-4 mt-5 mt-lg-0">
+        <div class="p-4 bg-gray-100 rounded">
+
+          <h2 class="h6 mb-3">Specifications</h2>
+          <table class="table eckdaten mb-4">
+            <tbody>
+              <tr><th>Microcontroller</th><td class="wert">ESP32-WROOM-32UE</td></tr>
+              <tr><th>Frequency</th><td class="wert">800 MHz – 6 GHz</td></tr>
+              <tr><th>Antenna Type</th><td class="wert">Log-Periodic</td></tr>
+              <tr><th>Display</th><td class="wert">16x2 LCD (I2C)</td></tr>
+              <tr><th>Power Source</th><td class="wert">5V Powerbank</td></tr>
+              <tr><th>Enclosure</th><td class="wert">Aluminum &amp; PLA (3D Print)</td></tr>
+              <tr><th>Authors</th><td class="wert">L. Adlboller, R. Heindl, L. Kolli</td></tr>
+              <tr><th>Supervisor</th><td class="wert">Dipl.-Ing. R. Nauta, BEd</td></tr>
+            </tbody>
+          </table>
+
+          <h2 class="h6 mb-3">Downloads &amp; Resources</h2>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-2"><a href="Files/diplomarbeit.pdf" class="link-fancy">Diploma Thesis Document (PDF)</a></li>
+          </ul>
+
+        </div>
+      </aside>
+
+    </div>
+  </article>
+
+  <div class="container py-4 border-top">
+    <a href="index.html#projekte" class="link-fancy">← Back to Overview</a>
+  </div>
+
+</main>
+
+<footer class="container py-4 border-top">
+  <p class="text-muted small mb-0">
+    © 2026 Letissa Adlboller, Robin Heindl, Lisa Kolli · HTL BULME Graz-Gösting · 
+    <a href="impressum.html" class="link-secondary">Legal Notice</a>
+  </p>
+</footer>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

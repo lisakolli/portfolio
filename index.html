@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lisa Kolli – Portfolio</title>
+  <meta name="description" content="Portfolio: custom PCBs, firmware, and instrumentation engineering projects.">
+  <meta name="author" content="Lisa Kolli">
+
+  <link rel="stylesheet" href="css/theme.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+     Identical on every page. If you make changes here,
+     you must also update them in project-template.html and 404.html.
+     ============================================================ -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white border-bottom">
+  <div class="container">
+    <a class="navbar-brand fw-bolder" href="index.html">Lisa Kolli</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#menu" aria-controls="menu" aria-expanded="false"
+            aria-label="Open menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#projekte">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#ueber">About me</a></li>
+        <li class="nav-item"><a class="nav-link" href="#kontakt">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ============================================================
+       PROJECTS
+       One tile = one <div class="col-md-6 col-lg-4"> ... </div>
+       To add a project: copy a complete block and replace the text.
+       col-lg-4 = 3 per row. If you want 2 per row: col-lg-6.
+       ============================================================ -->
+  <section id="projekte" class="container py-5 border-top">
+    <h2 class="h1 mb-4">Projects</h2>
+
+    <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+        <article class="projekt-karte position-relative">
+          <img src="img/projekte/EMR-Mapping.png" class="projekt-bild"
+               alt="Top view of the battery management system PCB">
+          <div class="p-3">
+            <h3 class="h5 mb-2">
+              <!-- stretched-link makes the entire card clickable -->
+              <a href="project-EMR-Mapping.html" class="stretched-link">EMR-Mapping</a>
+            </h3>
+            <p class="text-muted small mb-3">
+              Development of a mobile measurement device for capturing and GPS-mapped tracking of environmental EMR, paired with a scientific literature review on potential environmental impacts.
+            </p>
+            <span class="tag">Altium</span>
+            <span class="tag">3d-Design</span>
+            <span class="tag">Python</span>
+            <span class="tag">Ardunio</span>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT ME
+       ============================================================ -->
+  <section id="ueber" class="container py-5 border-top">
+    <div class="row">
+      <div class="col-lg-7">
+        <h2 class="h1 mb-4">About me</h2>
+        <p class="text-muted" style="max-width: 65ch;">
+          Ever since my childhood, I’ve had a great interest in electronics, which has significantly shaped my path. Over time, that interest grew into a genuine passion for microelectronics—especially the fields of chip design, digital design, and semiconductor technology, which have sparked my curiosity the most.
+          <br><br>
+          These core areas were also the deciding factor in my decision to pursue a degree in Electrical and Electronics Engineering at the Graz University of Technology (TU Graz).
+          <br><br>
+          Driven by a high level of motivation and a structured way of working, I am always eager to develop my skills and take on new challenges in the hardware space.
+        </p>
+      </div>
+
+      <div class="col-lg-5">
+        <h3 class="h5 mb-3">What I work with</h3>
+        <table class="table eckdaten mb-0">
+          <tbody>
+            <tr><th>Schematics </th><td> occasionally Altium</td></tr>
+            <tr><th>Digitaldesign Languages </th><td>VHDL, Verilog, System Verilog</td></tr>
+            <tr><th>Digitaldesign Programmes </th><td> Xiling Vivado</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+       No form required – that would need a server. Mailto is sufficient.
+       ============================================================ -->
+  <section id="kontakt" class="container py-5 border-top">
+    <div class="row">
+      <div class="col-lg-7">
+        <h2 class="h1 mb-3">Contact</h2>
+        <p class="mb-1">
+          <a href="mailto:lisa.kolli.2006@gmail.com" class="link-fancy">lisa.kolli.2006@gmail.com</a>
+        </p>
+        <p class="mb-1">
+          <a href="https://github.com/lisakolli" class="link-fancy" rel="me">github.com/lisakolli</a>
+        </p>
+        <p>
+          <a href="Files/Lebenslauf_LisaKolli_englisch.pdf" class="link-fancy">Curriculum Vitae (PDF)</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="container py-4 border-top">
+  <p class="text-muted small mb-0">
+    © 2026 Lisa Kolli ·
+    <a href="impressum.html" class="link-secondary">Legal Notice</a>
+  </p>
+</footer>
+
+<!-- Bootstrap JS: required for the mobile toggle menu. -->
+<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

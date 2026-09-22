@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Platzhalterbild">
+  <rect width="800" height="600" fill="#f1f3f5"/>
+  <g stroke="#ced4da" stroke-width="3" fill="none">
+    <path d="M200 180 h180 v60 h180"/>
+    <path d="M200 300 h120 v120 h280"/>
+    <path d="M600 180 v240"/>
+    <rect x="330" y="270" width="140" height="90" rx="4"/>
+  </g>
+  <g fill="#ced4da">
+    <circle cx="200" cy="180" r="9"/><circle cx="200" cy="300" r="9"/>
+    <circle cx="600" cy="240" r="9"/><circle cx="600" cy="420" r="9"/>
+  </g>
+  <text x="400" y="500" text-anchor="middle" font-family="Inter, sans-serif" font-size="26" fill="#adb5bd">Foto hier einsetzen</text>
+</svg>

@@ -1,0 +1,22 @@
+<!-- ▼▼▼ PROJECT TILE – copy from here ▼▼▼ -->
+      <div class="col-md-6 col-lg-4">
+        <article class="projekt-karte position-relative">
+          <img src="img/projekte/platzhalter.svg" class="projekt-bild"
+               alt="Top view of the battery management system PCB">
+          <div class="p-3">
+            <h3 class="h5 mb-2">
+              <!-- stretched-link makes the entire card clickable -->
+              <a href="projekt-vorlage.html" class="stretched-link">4S LiFePO4 BMS</a>
+            </h3>
+            <p class="text-muted small mb-3">
+              Cell monitoring featuring passive balancing, CAN interface, and low-voltage 
+              cutoff. 4-layer PCB designed for 60&nbsp;A continuous current.
+            </p>
+            <span class="tag">STM32G0</span>
+            <span class="tag">KiCad</span>
+            <span class="tag">CAN</span>
+            <span class="tag">4-Layer</span>
+          </div>
+        </article>
+      </div>
+      <!-- ▲▲▲ copy to here ▲▲▲ -->
